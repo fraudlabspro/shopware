@@ -45,4 +45,4 @@ We have been in the fraud prevention industry for more than 10 years. Thousands 
 ## SUPPORT
 Email: support@fraudlabspro.com
 
-Please visit us at [FraudLabs Pro](https://www.fraudlabspro.com/supported-platforms/shopware/) for more information.
+Please visit us at [FraudLabs Pro](https://www.fraudlabspro.com/supported-platforms/shopware) for more information.

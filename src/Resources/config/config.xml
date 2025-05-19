@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>FraudLabsPro Plugin configuration</title>
+
+        <input-field type="text">
+            <name>apiKey</name>
+            <label>API key</label>
+            <required>true</required>
+            <helpText>The API key obtained from FraudLabs Pro.</helpText>
+        </input-field>
+        <input-field type="single-select">
+            <name>approveStageId</name>
+            <label>Approve Status</label>
+            <helpText>Change order to this stage when transaction is approved by FraudLabs Pro.</helpText>
+            <options>
+                <option>
+                    <id>reopen</id>
+                    <name>Open</name>
+                </option>
+                <option>
+                    <id>complete</id>
+                    <name>Complete</name>
+                </option>
+                <option>
+                    <id>process</id>
+                    <name>In Progress</name>
+                </option>
+                <option>
+                    <id>cancel</id>
+                    <name>Cancelled</name>
+                </option>
+                <option>
+                    <id>no_change</id>
+                    <name>No change</name>
+                </option>
+
+                <defaultValue>no_change</defaultValue> <!-- Default selected value -->
+            </options>
+        </input-field>
+        <input-field type="single-select">
+            <name>reviewStageId</name>
+            <label>Review Status</label>
+            <helpText>Change order to this stage when transaction is marked as review by FraudLabs Pro.</helpText>
+            <options>
+                <option>
+                    <id>reopen</id>
+                    <name>Open</name>
+                </option>
+                <option>
+                    <id>complete</id>
+                    <name>Complete</name>
+                </option>
+                <option>
+                    <id>process</id>
+                    <name>In Progress</name>
+                </option>
+                <option>
+                    <id>cancel</id>
+                    <name>Cancelled</name>
+                </option>
+                <option>
+                    <id>no_change</id>
+                    <name>No change</name>
+                </option>
+
+                <defaultValue>no_change</defaultValue> <!-- Default selected value -->
+            </options>
+        </input-field>
+        <input-field type="single-select">
+            <name>rejectStageId</name>
+            <label>Reject Status</label>
+            <helpText>Change order to this stage when transaction is rejected by FraudLabs Pro.</helpText>
+            <options>
+                <option>
+                    <id>reopen</id>
+                    <name>Open</name>
+                </option>
+                <option>
+                    <id>complete</id>
+                    <name>Complete</name>
+                </option>
+                <option>
+                    <id>process</id>
+                    <name>In Progress</name>
+                </option>
+                <option>
+                    <id>cancel</id>
+                    <name>Cancelled</name>
+                </option>
+                <option>
+                    <id>no_change</id>
+                    <name>No change</name>
+                </option>
+
+                <defaultValue>no_change</defaultValue> <!-- Default selected value -->
+            </options>
+        </input-field>
+    </card>
+
+</config>

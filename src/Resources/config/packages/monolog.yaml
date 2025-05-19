@@ -1,0 +1,9 @@
+monolog:
+  channels: ['flp_plugin_channel']
+
+  handlers:
+    myPluginLogHandler:
+        type: stream
+        path: "%kernel.logs_dir%/my_plugin_%kernel.environment%.log"
+        level: info
+        channels: [ "flp_plugin_channel"]

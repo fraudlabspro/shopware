@@ -2,7 +2,7 @@
     "name": "fraud-labs-pro/fraud-labs-pro",
     "description": "Fraud prevention module for Shopware 6, powered by FraudLabs Pro.",
     "type": "shopware-platform-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "require": {
         "shopware/core": "~6.6.0"

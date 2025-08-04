@@ -149,7 +149,8 @@ class CheckoutSubscriber implements EventSubscriberInterface
             
             if ($note != '') {
                 $customFields = $order->getCustomFields() ?? [];
-                $customFields['flp_internal_note'] = $note;
+                // Sanitize the note before storing it
+                $customFields['flp_internal_note'] = htmlspecialchars($note, ENT_QUOTES, 'UTF-8');
                 $this->orderRepository->update([
                     [
                         'id' => $order->getId(),
@@ -199,7 +200,6 @@ class CheckoutSubscriber implements EventSubscriberInterface
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
         curl_setopt($ch, CURLOPT_HTTP_VERSION, '1.1');
         curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
@@ -235,7 +235,7 @@ class CheckoutSubscriber implements EventSubscriberInterface
         for ($i = 0; $i < 65536; ++$i) {
             $hash = sha1($prefix . $hash);
         }
-
-        return $hash;
+        $hash2 = hash('sha256', $hash);
+        return $hash2;
     }
 }

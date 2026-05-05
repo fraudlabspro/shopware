@@ -24,7 +24,7 @@ class CheckoutSubscriber implements EventSubscriberInterface
     private SystemConfigService $systemConfigService;
     private RequestStack $requestStack;
     private EntityRepository $orderRepository;
-    private $pluginVersion = '1.0.0';
+    private $pluginVersion = '1.1.0';
 
     public function __construct(StateMachineRegistry $stateMachineRegistry, SystemConfigService $systemConfigService, RequestStack $requestStack, EntityRepository $orderRepository)
     {
@@ -59,8 +59,6 @@ class CheckoutSubscriber implements EventSubscriberInterface
         $request = $this->requestStack->getCurrentRequest();
         
         $order = $event->getOrder();
-        //file_put_contents('/var/www/shopware/var/log/debug-order.log', print_r(get_class($order), true) . PHP_EOL, FILE_APPEND);
-        //file_put_contents('/var/www/shopware/var/log/debug-order.log', print_r(get_class_methods($order), true) . PHP_EOL, FILE_APPEND);
         $context = $event->getContext();
         $salesChannelContext = $event->getSalesChannelContext();
         $billing = $salesChannelContext->getCustomer()?->getActiveBillingAddress();
@@ -97,6 +95,7 @@ class CheckoutSubscriber implements EventSubscriberInterface
             'ip' => $ip,
             'first_name' => $billing->getFirstName(),
             'last_name' => $billing->getLastName(),
+            'bill_to' => $billing->getCompany(),
             'bill_addr' => $billing->getStreet(),
             'bill_city' => $billing->getCity(),
             'bill_state' => $billing->getCountryState()->getShortCode(),
@@ -167,13 +166,6 @@ class CheckoutSubscriber implements EventSubscriberInterface
                 );
                 $this->stateMachineRegistry->transition($transition, $context);
                 if (in_array($finalOrderStatus, ['cancel'])) {
-                    // $transition = new Transition(
-                        // OrderDeliveryDefinition::ENTITY_NAME,
-                        // $order->getId(),
-                        // $finalOrderStatus,
-                        // 'stateId'
-                    // );
-                    // $this->stateMachineRegistry->transition($transition, $context);
                     foreach ($arr1 as $arr1_key => $arr1_value) {
                         $transition = new Transition(
                             OrderTransactionDefinition::ENTITY_NAME,

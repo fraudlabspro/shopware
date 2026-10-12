@@ -1,9 +1,9 @@
 # Shopware
 FraudLabs Pro Fraud Prevention plugin to help merchants to screen the order transactions for payment fraud. Its comprehensive and advanced algorithm engines validate all elements such as geolocation, anonymous proxy, email address, blacklist record, credit card BIN, transaction velocity and many more to pinpoint fraud orders accurately.
 
-Free Micro Plan available with 500 validations per month.
+Free Micro Plan: Get 500 fraud validations per month at no cost. [Sign Up For Free](https://www.fraudlabspro.com/checkout-micro).
 
-Please visit the [FraudLabs Pro Articles & Tutorials](https://www.fraudlabspro.com/resources/) to learn more about our fraud validation.
+Explore our [FraudLabs Pro Articles & Tutorials](https://www.fraudlabspro.com/resources/) to learn more about fraud validation.
 
 *Note: This plugin works in Shopware 6.6 and 6.7.
 
@@ -15,6 +15,8 @@ We offer you a flexible solution to identify a fraud order. You can use our Frau
 * **Free**
 
 We are not offering you a trial version, but a free version to start protecting your online business. It’s absolutely free if your monthly orders are less than 500 transactions or monthly sales are less than 25K USD. There is no upfront credit card information needed, commitment, hidden cost and whatsoever.
+
+[Sign up for a Free Micro Plan](https://www.fraudlabspro.com/checkout-micro)
 
 * **Trustworthy**
 
